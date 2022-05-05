@@ -1,4 +1,4 @@
-let backendAddress = "https://jnhenkel-findnearbyplaces.herokuapp.com/";
+let backendAddress = "https://jnhenkel-findnearbyplaces.herokuapp.com";
 
 let apiAccess = {
     addUser: (name, email, password) => {
