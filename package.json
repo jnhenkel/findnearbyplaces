@@ -1,6 +1,6 @@
 {
   "homepage": "https://jnhenkel.github.io/findnearbyplaces",
-  "name": "jnhenkel-findnearbyplaces",
+  "name": "findnearbyplaces",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
