@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import apiAccess from '../communication/APIAccess';
 
 const Search = () => {
+    
     return (
         <div className='container'>
             <div className='searchField'>
