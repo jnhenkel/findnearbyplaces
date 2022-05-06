@@ -47,6 +47,21 @@ let apiAccess = {
                 return x;
             })
     },
+
+    search: (search_term, user_location, radius_filter, maximum_results_to_return, category_filter, sort) => {
+        return fetch(`${backendAddress}/search/${search_term}/${user_location}/${radius_filter}/${maximum_results_to_return}/${category_filter}/${sort}`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Credentials': true
+            },
+        })
+        .then(x => x.json())
+        .then(x => {
+            return x;
+        })
+    }
 };
 
 export default apiAccess;

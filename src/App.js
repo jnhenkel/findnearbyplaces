@@ -23,7 +23,7 @@ function App() {
       <NavigationBar user={user} userLoggedIn={handleLoggedIn} />
       <Routes>
         <Route path='/findnearbyplaces' element={<Search  />} />
-        <Route path='/index' element={<Search  />} />
+        <Route path='/search' element={<Search  />} />
         <Route path='/login' element={<Login userLoggedIn={handleLoggedIn} />} />
         <Route path='/logout' element={<Search userloggedIn={handleLoggedIn} />} />
         <Route path='/register' element={<Registration />} />

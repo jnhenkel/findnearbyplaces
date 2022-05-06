@@ -1,5 +1,6 @@
 import {React, useEffect, useState} from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 import apiAccess from '../communication/APIAccess';
 
 const Search = () => {
@@ -11,11 +12,7 @@ const Search = () => {
     const [sort, setSort] = useState('');
 
     useEffect(() => {
-        if (!user_location) {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition((position) => {console.log(position.coords.latitude, position.coords.longitude)});
-            }
-        }
+        
     }, [])
 
     let handleSearchTerm = (event) => {
@@ -41,6 +38,27 @@ const Search = () => {
     let handleSort = (event) => {
         let val = event.target.value;
         setSort(val);
+    };
+
+    let handleSubmit = (event) => {
+        event.preventDefault();
+        if (!user_location) {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    //console.log(position.coords.latitude, position.coords.longitude);
+                    setUserLocation(String(position.coords.latitude) + ',' + String(position.coords.longitude));
+                });
+            }
+        }
+        apiAccess.search(search_term, user_location, radius_filter, maximum_results_to_return, category_filter, sort)
+        .then(x => {
+            console.log('from search: ', x);
+            alert('Search complete');
+        })
+        .catch(e => {
+            console.log(e);
+            alert('An error occurred while getting search');
+        })
     };
 
     return (
@@ -74,6 +92,9 @@ const Search = () => {
                         <div className='row'>
                             <label htmlFor='sort' id='sortLabel'>Sort by (optional): </label>
                             <input type='text' name='sort' id='sort' value={sort} onChange={handleSort} />
+                        </div>
+                        <div className='row'>
+                            <Button id='submitRegister' size='lg' variant='primary' onClick={handleSubmit}>Submit</Button>
                         </div>
                     </div>
                 </form>
