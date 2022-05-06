@@ -13,8 +13,7 @@ const Search = () => {
     useEffect(() => {
         if (!user_location) {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(position => {position.coords.latitude, position.coords.longitude});
-                console.log('from useeffect: ', navigator.geolocation.getCurrentPosition(position => {position.coords.latitude, position.coords.longitude}));
+                navigator.geolocation.getCurrentPosition((position) => {console.log(position.coords.latitude, position.coords.longitude)});
             }
         }
     }, [])
