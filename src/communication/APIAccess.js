@@ -50,7 +50,7 @@ let apiAccess = {
 
     search: (search_term, user_location, radius_filter, maximum_results_to_return, category_filter, sort) => {
         return fetch(`${backendAddress}/search/${search_term}/${user_location}/${radius_filter}/${maximum_results_to_return}/${category_filter}/${sort}`, {
-            method: 'POST',
+            method: 'GET',
             credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
