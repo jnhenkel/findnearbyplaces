@@ -1,9 +1,49 @@
-import React from 'react';
+import {React, useEffect, useState} from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import apiAccess from '../communication/APIAccess';
 
 const Search = () => {
-    
+    const [search_term, setSearchTerm] = useState('');
+    const [user_location, setUserLocation] = useState('');
+    const [maximum_results_to_return, setMaxResults] = useState(0);
+    const [radius_filter, setRadiusFilter] = useState('');
+    const [category_filter, setCategoryFilter] = useState('');
+    const [sort, setSort] = useState('');
+
+    useEffect(() => {
+        if (!user_location) {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+                console.log('from useeffect: ', navigator.geolocation.getCurrentPosition(showPosition));
+            }
+        }
+    }, [])
+
+    let handleSearchTerm = (event) => {
+        let val = event.target.value;
+        setSearchTerm(val);
+    };
+
+    let handleMaximumResultsToReturn = (event) => {
+        let val = event.target.value;
+        setMaxResults(val);
+    };
+
+    let handleRadiusFilter = (event) => {
+        let val = event.target.value;
+        setRadiusFilter(val);
+    };
+
+    let handleCategoryFilter = (event) => {
+        let val = event.target.value;
+        setCategoryFilter(val);
+    };
+
+    let handleSort = (event) => {
+        let val = event.target.value;
+        setSort(val);
+    };
+
     return (
         <div className='container'>
             <div className='searchField'>
