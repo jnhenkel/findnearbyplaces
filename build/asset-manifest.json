@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/findnearbyplaces/static/css/main.34cb5743.css",
-    "main.js": "/findnearbyplaces/static/js/main.aa7cea3f.js",
+    "main.js": "/findnearbyplaces/static/js/main.09f7d625.js",
     "index.html": "/findnearbyplaces/index.html",
     "main.34cb5743.css.map": "/findnearbyplaces/static/css/main.34cb5743.css.map",
-    "main.aa7cea3f.js.map": "/findnearbyplaces/static/js/main.aa7cea3f.js.map"
+    "main.09f7d625.js.map": "/findnearbyplaces/static/js/main.09f7d625.js.map"
   },
   "entrypoints": [
     "static/css/main.34cb5743.css",
-    "static/js/main.aa7cea3f.js"
+    "static/js/main.09f7d625.js"
   ]
 }
