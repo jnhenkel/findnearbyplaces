@@ -11,9 +11,7 @@ const Search = () => {
     const [category_filter, setCategoryFilter] = useState(null);
     const [sort, setSort] = useState(null);
 
-    useEffect(() => {
-        
-    }, [])
+    
 
     let handleSearchTerm = (event) => {
         let val = event.target.value;
