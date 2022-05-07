@@ -4,12 +4,12 @@ import Button from 'react-bootstrap/Button';
 import apiAccess from '../communication/APIAccess';
 
 const Search = () => {
-    const [search_term, setSearchTerm] = useState(0);
-    const [user_location, setUserLocation] = useState(0);
+    const [search_term, setSearchTerm] = useState('');
+    const [user_location, setUserLocation] = useState('');
     const [maximum_results_to_return, setMaxResults] = useState(10);
-    const [radius_filter, setRadiusFilter] = useState(0);
-    const [category_filter, setCategoryFilter] = useState(0);
-    const [sort, setSort] = useState(0);
+    const [radius_filter, setRadiusFilter] = useState('');
+    const [category_filter, setCategoryFilter] = useState('');
+    const [sort, setSort] = useState('');
 
     
 
